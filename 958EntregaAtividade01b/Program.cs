@@ -1,35 +1,4 @@
-﻿/*Questão #4
-No mercado financeiro utiliza-se uma estratégia chamada 
-Percentage of Volume (POV) para executar operações durante 
-o dia, seja de compra ou venda, respeitando um determinado 
-volume.
-
-Por exemplo, ao configurar uma POV para fazer 10% do mercado
-na compra de PETR4, é esperado que, quando tivermos 100 
-execuções totais no mercado, a estratégia seja responsável
-por 10 quantidades desse total de 100 executadas.
-
-Para que tal fato aconteça, a estratégia deve considerar a
-sua execução para calcular quantas ações devem enviar. 
-Ou seja, quando o mercado tiver executado 90 ordens, 
-a estratégia precisa calcular 10, pois 90 + 10 = 100, 
-e 10/100 = 10%.
-
-Implemente a função que retorna a quantidade que a estratégia 
-deve enviar ao mercado, dada a porcentagem e o total negociado.
-
-Considere a seguinte assinatura:
-
-int funcaoRetornaQuantitadePOV(decimal porcentagem, int totalNegociado)
-Exemplos para teste:
-
-funcaoRetornaQuantitadePOV(0.1, 90) //10
-funcaoRetornaQuantitadePOV(0.1, 100) //11
-funcaoRetornaQuantitadePOV(0.2, 70) //17
-Crie um novo repositório no GitHub e submeta o link para o seu repositório.*/
-using System;
-
-namespace Cs958 {
+﻿namespace Cs958 {
     public class Exercicio {
         public static int funcaoRetornaQuantitadePOV(decimal porcentagem, int totalNegociado) =>
             (int)Math.Truncate((porcentagem * totalNegociado) / (1 - porcentagem));
